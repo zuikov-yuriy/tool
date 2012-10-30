@@ -1,6 +1,5 @@
 class Electric < Tool
 
-
    attr_reader  :voltage, :power
    
    def initialize(name, price, weight, voltage, power)
@@ -8,8 +7,5 @@ class Electric < Tool
 	@voltage = voltage
 	@power = power
     end
-
-
-   
 
 end

@@ -1,6 +1,6 @@
 class Tool
 
-   attr_reader :name, :weight
+   attr_reader :name, :weight, :price
 
 
    def initialize(name, price, weight)
@@ -9,19 +9,30 @@ class Tool
         @weight = weight
    end
 
-
    
    def self.discount
-       self == Hand ? 10 : 0
-       self == Electric ? 100 : 0
+        if self == Hand 
+          10
+         elsif self == Electric   
+          100
+        end 
    end
 
 
 
-   def price
-      @price - self.class.discount
+   def discoun_price
+      @p = @price - self.class.discount
+      @p
    end
-  
+
+
+
+   def tax_price
+      @t = (@price - self.class.discount)*1.2
+      @t
+   end
+
+
 
 end
 
