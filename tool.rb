@@ -1,39 +1,38 @@
 class Tool
 
-   attr_reader :name, :weight, :price
+   attr_accessor :name, :weight, :price
 
-
-   def initialize(name, price, weight)
-        @name = name
-        @price = price
-        @weight = weight
+   def initialize
+        @name = nil
+        @price = nil
+        @weight = nil
    end
 
-   
+
+   def price?
+     instance_variable_defined? :@price
+   end
+
+
+   def in_stock
+     price? ? "In stock:YES" : "In stock:NOT"
+   end
+
+
+
+   def disc
+     price? ? @price - self.class.discount : "NOT PRICE"
+   end
+
+
+
    def self.discount
-        if self == Hand 
+        if self == Hand
           10
-         elsif self == Electric   
+         elsif self == Electric
           100
-        end 
+        end
    end
-
-
-
-   def discoun_price
-      @p = @price - self.class.discount
-      @p
-   end
-
-
-
-   def tax_price
-      @t = (@price - self.class.discount)*1.2
-      @t
-   end
-
 
 
 end
-
-

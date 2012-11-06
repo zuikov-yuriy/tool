@@ -1,11 +1,14 @@
 class Electric < Tool
 
-   attr_reader  :voltage, :power
+  attr_accessor  :voltage, :power
    
-   def initialize(name, price, weight, voltage, power)
-	super(name, price, weight)
-	@voltage = voltage
-	@power = power
-    end
+  def initialize
+    @voltage = nil
+    @power = nil
+  end
+
+
+
+
 
 end

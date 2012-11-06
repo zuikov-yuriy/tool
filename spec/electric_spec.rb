@@ -1,4 +1,4 @@
-require '../electric'
+require 'spec_helper'
 
 describe "" do
 
