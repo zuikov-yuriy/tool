@@ -26,7 +26,7 @@ class Tool
 
 
 
-   def self.discount
+   def discount
         if self.class == Hand
           10
         elsif self.class == Electric
